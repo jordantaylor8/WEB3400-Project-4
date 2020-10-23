@@ -1,42 +1,24 @@
 <?php
-// We need to use sessions, so you should always start sessions using the below code.
-session_start();
-// If the user is not logged in redirect to the login page...
-if (!isset($_SESSION['loggedin'])) {
-	header('Location: index.html');
-	exit();
+
+require 'session.php';//Rex Platt 10/21/2020
+require 'dbcon.php';//Rex Platt 10/21/2020
+
+if (!isset($_SESSION['loggedin'])){
+  header('Location: index.php');//<!---Rex Platt 10/23/2020 --->
+  exit;
 }
-
-//connect ot our database
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'W01307309';
-$DATABASE_PASS = 'Jordancs!';
-$DATABASE_NAME = 'W01307309';
-  
-//try the connection to see if it works
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-
-if (mysqli_connect_errno()) {
-  //if there is an error stop and display error
-  exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
-
+//prepare SQL to check username and password
 $stmt = $con->prepare('SELECT password, email FROM accounts WHERE id = ?');
-$stmt->bind_param('i',  $_SESSION['id']);
+  //Bind parameters (s= string i = int b= blob etc), in our case the username ins a string so we use "s"
+$stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->bind_result($password, $email);
 $stmt->fetch();
 $stmt->close();
 
-// echo $_SESSION['name'];
-// echo '<br>';
-// echo $password;
-// echo '<br>';
-// echo $email;
-
 ?>
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
 
   <head>
@@ -112,11 +94,9 @@ $stmt->close();
             <div class="hero-body">
               <div class="container">
                 <h1 class="title">
-                  Edit your profile.
+                  Edit your profile
+                  <!-- <?=$_SESSION['name']?>.-->
                 </h1>
-                <!--                 <h2 class="subtitle">
-                  I hope you are having a great day!
-                </h2> -->
               </div>
             </div>
           </section>
@@ -124,28 +104,25 @@ $stmt->close();
           <hr class="hr">
           <!-- START CONTENT -->
           <section class="section">
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">
-                      <?=$_SESSION['name']?>
-                    </p>
-                    <p class="subtitle is-6">
-                      <?=$email?>
-                    </p>
+                <div class="card">
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-left">
+                        <figure class="image is-48x48">
+                          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                        </figure>
+                      </div>
+                        
+                      <div class="media-content">
+                        <p class="title is-4"><?=$_SESSION['name']?></p>
+                        <p class="subtitle is-6"><?=$email?></p> 
+                      </div>
+                    </div>
+                  
+                  <div class="content">
+                    <?=$password?>
                   </div>
                 </div>
-
-                <div class="content">
-                  <?=$password?>
-                </div>
-              </div>
             </div>
           </section>
           <!-- END CONTENT -->
