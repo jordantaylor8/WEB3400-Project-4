@@ -25,10 +25,10 @@
         }
       ?>
       <div class="box">
-        <form><!--//Rex Platt 10/21/2020-->
+        <form action= <?php echo $Domain;?> method = "post"><!--//Rex Platt 10/21/2020--><!--//Caleb Reese 10/24/2020//-->
           <div class="field">
             <div class="control">
-              <button class="button is-info is-fullwidth"><a href= <?php echo $Domain;?>><!--//Caleb 10/23/2020-->
+              <button class="button is-info is-fullwidth">
                 <span><font color = "FFFFFF">Confrim Email</font></span><!--//Caleb 10/23/2020-->
                     <span class="icon"><i class="fas fa-paper-plane has-text-white"></i><!--//Caleb 10/23/2020-->
                 </a>
