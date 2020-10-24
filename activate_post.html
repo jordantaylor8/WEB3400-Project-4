@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create Account</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <script defer src="js/bulma.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Create Account</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <script defer src="js/bulma.js"></script>
-</head>
-
-<body>
-  <section class="section">
-    <div class="column is-4 is-offset-4">
-      <h1 class="title">Account Email Verified!</h1><!--//Rex Platt 10/23/2020-->
-      <p class="subtitle"></p>
-      <div class="box">
-        <form action="index.php" > <!---Rex Platt 10/23/2020 --->
-          <div class="field">
-            <div class="control">
-              <button class="button is-info is-fullwidth">
-                <span>Go to Login Page</span> <!--//Rex Platt 10/21/2020-->
-                    <span class="icon">
-                      <i class="fas fa-sign-in-alt"></i>
-                    </span>
-                  </button>
+  <body>
+    <section class="section">
+      <div class="column is-4 is-offset-4">
+        <h1 class="title">Account Email Verified!</h1>
+        <!--//Rex Platt 10/23/2020-->
+        <p class="subtitle"></p>
+        <div class="box">
+          <form action="index.php">
+            <!---Rex Platt 10/23/2020 --->
+            <div class="field">
+              <div class="control">
+                <button class="button is-info is-fullwidth">
+                  <span>Go to Login Page</span>
+                  <!--//Rex Platt 10/21/2020-->
+                  <span class="icon">
+                    <i class="fas fa-sign-in-alt"></i>
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
-
-        </form>
+          </form>
+        </div>
+        <p class="buttons are-small">
+          <a class="button" href="#">
+            <span>Need Help</span>
+            <span class="icon"><i class="far fa-question-circle"></i></span>
+          </a>
+        </p>
       </div>
-      <p class="buttons are-small">
-        <a class="button" href="#">
-          <span>Need Help</span>
-              <span class="icon"><i class="far fa-question-circle"></i></span>
-            </a>
-      </p>
-    </div>
-  </section>
-</body>
-
+    </section>
+  </body>
 </html>

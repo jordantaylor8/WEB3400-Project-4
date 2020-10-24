@@ -21,47 +21,39 @@
           <div class="field">
             <div class="control">
               <!---Rex Platt 10/23/2020--->
-              <?php if(isset($_GET['completeForm'])){
-                        echo"<input name='username' class='input is-danger' type='text' placeholder='Username'>";
-                        echo "<p class='help is-danger'>Required Field</p>";
-  
-                          
-                        }elseif(isset($_GET['usernameExists'])){
-                              echo"<input name='username' class='input is-danger' type='text' placeholder='Username'>";
-                              echo "<p class='help is-danger'>Username already exists. Please choose another. </p>";
-  
-  
-                        }else{
-                          echo"<input name='username' class='input' type='text' placeholder='Username'>";
-                          }?>
-              <!---Rex Platt 10/23/2020--->
-            </div>
-          </div>
-          <div class="field">
-            <div class="control">
-             <!---Rex Platt 10/23/2020--->
-               <?php if(isset($_GET['completeForm'])){
-                        echo"<input name='email' class='input is-danger' type='text' placeholder='Email'>";
-                        echo "<p class='help is-danger'>Required Field</p>";
-  
-                          
-                        }else{
-                          echo"<input name='email' class='input' type='text' placeholder='Email'>";
-                          }?>
+              <?php if (isset($_GET['completeForm'])) {
+                echo "<input name='username' class='input is-danger' type='text' placeholder='Username'>";
+                echo "<p class='help is-danger'>Required Field</p>";
+              } elseif (isset($_GET['usernameExists'])) {
+                echo "<input name='username' class='input is-danger' type='text' placeholder='Username'>";
+                echo "<p class='help is-danger'>Username already exists. Please choose another. </p>";
+              } else {
+                echo "<input name='username' class='input' type='text' placeholder='Username'>";
+              } ?>
               <!---Rex Platt 10/23/2020--->
             </div>
           </div>
           <div class="field">
             <div class="control">
               <!---Rex Platt 10/23/2020--->
-               <?php if(isset($_GET['completeForm'])){
-                        echo"<input name='password' class='input is-danger' type='password' placeholder='Password'>";
-                        echo "<p class='help is-danger'>Required Field</p>";
-  
-                          
-                        }else{
-                          echo"<input name='password' class='input' type='password' placeholder='Password'>";
-                          }?>
+              <?php if (isset($_GET['completeForm'])) {
+                echo "<input name='email' class='input is-danger' type='text' placeholder='Email'>";
+                echo "<p class='help is-danger'>Required Field</p>";
+              } else {
+                echo "<input name='email' class='input' type='text' placeholder='Email'>";
+              } ?>
+              <!---Rex Platt 10/23/2020--->
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <!---Rex Platt 10/23/2020--->
+              <?php if (isset($_GET['completeForm'])) {
+                echo "<input name='password' class='input is-danger' type='password' placeholder='Password'>";
+                echo "<p class='help is-danger'>Required Field</p>";
+              } else {
+                echo "<input name='password' class='input' type='password' placeholder='Password'>";
+              } ?>
               <!---Rex Platt 10/23/2020--->
             </div>
           </div>
@@ -70,23 +62,24 @@
             <div class="control">
               <button class="button is-info is-fullwidth">
                 <span>Create your account</span>
-                    <span class="icon">
-                      <i class="fas fa-user-plus"></i>
-                    </span>
-                  </button>
+                <span class="icon">
+                  <i class="fas fa-user-plus"></i>
+                </span>
+              </button>
             </div>
           </div>
 
         </form>
       </div>
       <p class="buttons are-small">
-        <a class="button" href="index.php"><!---Rex Platt 10/23/2020--->
+        <a class="button" href="index.php">
+          <!---Rex Platt 10/23/2020--->
           <span>Back to home</span>
-              <span class="icon"><i class="fas fa-home"></i></span>
-        <a class="button" href="#">
-          <span>Need Help</span>
-              <span class="icon"><i class="far fa-question-circle"></i></span>
-            </a>
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <a class="button" href="#">
+            <span>Need Help</span>
+            <span class="icon"><i class="far fa-question-circle"></i></span>
+          </a>
       </p>
     </div>
   </section>

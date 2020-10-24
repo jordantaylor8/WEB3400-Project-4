@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -14,24 +13,32 @@
 <body>
   <section class="section">
     <div class="column is-4 is-offset-4">
-      <h1 class="title">Account created!</h1><!--//Rex Platt 10/21/2020-->
-      <p class="subtitle">Please verify your email account using the email that we sent to:</p><!--//Rex Platt 10/21/2020-->
-      <?php if(isset($_GET['email'])){
-          echo "<p class='subtitle'>". $_GET['email']."</p>";
-  
-          //Caleb Reese 10/23/2020 Registration Redirect
-          $exploded_Email = explode('@', $_GET['email']); //Parse email on @
-          $Domain = "https://www.".$exploded_Email[1]; //Domain is the second part of the exploded email
-        }
+      <h1 class="title">Account created!</h1>
+      <!--//Rex Platt 10/21/2020-->
+      <p class="subtitle">Please verify your email account using the email that we sent to:</p>
+      <!--//Rex Platt 10/21/2020-->
+      <?php if (isset($_GET['email'])) {
+        echo "<p class='subtitle'>" . $_GET['email'] . "</p>";
+
+        //Caleb Reese 10/23/2020 Registration Redirect
+        $exploded_Email = explode('@', $_GET['email']); //Parse email on @
+        $Domain = "https://www." . $exploded_Email[1]; //Domain is the second part of the exploded email
+      }
       ?>
       <div class="box">
-        <form action= <?php echo $Domain;?> method = "post"><!--//Rex Platt 10/21/2020--><!--//Caleb Reese 10/24/2020//-->
+        <form action=<?php echo $Domain; ?> method="post">
+          <!--//Rex Platt 10/21/2020-->
+          <!--//Caleb Reese 10/24/2020//-->
           <div class="field">
             <div class="control">
               <button class="button is-info is-fullwidth">
-                <span><font color = "FFFFFF">Confrim Email</font></span><!--//Caleb 10/23/2020-->
-                    <span class="icon"><i class="fas fa-paper-plane has-text-white"></i><!--//Caleb 10/23/2020-->
-                </a>
+                <span>
+                  <font color="FFFFFF">Confrim Email</font>
+                </span>
+                <!--//Caleb 10/23/2020-->
+                <span class="icon"><i class="fas fa-paper-plane has-text-white"></i>
+                  <!--//Caleb 10/23/2020-->
+                  </a>
               </button>
             </div>
           </div>
@@ -41,8 +48,8 @@
       <p class="buttons are-small">
         <a class="button" href="#">
           <span>Need Help</span>
-              <span class="icon"><i class="far fa-question-circle"></i></span>
-            </a>
+          <span class="icon"><i class="far fa-question-circle"></i></span>
+        </a>
       </p>
     </div>
   </section>

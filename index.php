@@ -20,15 +20,13 @@
 
           <div class="field">
             <div class="control">
-         <!--- Rex Platt 10/23/2020 --->
-              <?php if(isset($_GET['username'])){
-                        echo"<input name='username' class='input is-danger' type='text' placeholder='Username'>";
-                        echo "<p class='help is-danger'>Incorrect username</p>";
-  
-                          
-                        }else{
-                          echo"<input name='username' class='input' type='text' placeholder='Username'>";
-                          }?>
+              <!--- Rex Platt 10/23/2020 --->
+              <?php if (isset($_GET['username'])) {
+                echo "<input name='username' class='input is-danger' type='text' placeholder='Username'>";
+                echo "<p class='help is-danger'>Incorrect username</p>";
+              } else {
+                echo "<input name='username' class='input' type='text' placeholder='Username'>";
+              } ?>
               <!--- Rex Platt 10/23/2020 --->
             </div>
           </div>
@@ -36,27 +34,25 @@
           <div class="field">
             <div class="control">
               <!--- Rex Platt 10/23/2020 --->
-              <?php if(isset($_GET['password'])){
-                        echo"<input name='password' class='input is-danger' type='password' placeholder='Password'>";
-                        echo "<p class='help is-danger'>Incorrect password</p>";
-  
-                          
-                        }else{
-                          echo"<input name='password' class='input' type='password' placeholder='Password'>";
-                          }?>
-               <!--- Rex Platt 10/23/2020 --->
-              </div>
-             </div>
-      
+              <?php if (isset($_GET['password'])) {
+                echo "<input name='password' class='input is-danger' type='password' placeholder='Password'>";
+                echo "<p class='help is-danger'>Incorrect password</p>";
+              } else {
+                echo "<input name='password' class='input' type='password' placeholder='Password'>";
+              } ?>
+              <!--- Rex Platt 10/23/2020 --->
+            </div>
+          </div>
+
 
           <div class="field">
             <div class="control">
               <button class="button is-info is-fullwidth">
                 <span>Login</span>
-                    <span class="icon">
-                      <i class="fas fa-sign-in-alt"></i>
-                    </span>
-                  </button>
+                <span class="icon">
+                  <i class="fas fa-sign-in-alt"></i>
+                </span>
+              </button>
             </div>
           </div>
 
@@ -64,17 +60,17 @@
       </div>
       <p class="buttons are-small">
         <a class="button" href="register_user.php">
-              <span class="icon"><i class="fas fa-user-plus"></i></span>
-              <span>Sign Up</span>
-            </a>
+          <span class="icon"><i class="fas fa-user-plus"></i></span>
+          <span>Sign Up</span>
+        </a>
         <a class="button" href="#">
-              <span class="icon"><i class="fas fa-key"></i></span>
-              <span>Forgot Password</span>
-            </a>
+          <span class="icon"><i class="fas fa-key"></i></span>
+          <span>Forgot Password</span>
+        </a>
         <a class="button" href="#">
           <span>Need Help</span>
-              <span class="icon"><i class="far fa-question-circle"></i></span>
-            </a>
+          <span class="icon"><i class="far fa-question-circle"></i></span>
+        </a>
       </p>
     </div>
   </section>
