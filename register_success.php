@@ -18,18 +18,21 @@
       <p class="subtitle">Please verify your email account using the email that we sent to:</p><!--//Rex Platt 10/21/2020-->
       <?php if(isset($_GET['email'])){
           echo "<p class='subtitle'>". $_GET['email']."</p>";
+  
+          //Caleb Reese 10/23/2020 Registration Redirect
+          $exploded_Email = explode('@', $_GET['email']); //Parse email on @
+          $Domain = "https://www.".$exploded_Email[1]; //Domain is the second part of the exploded email
         }
       ?>
       <div class="box">
-        <form action="index.php" ><!--//Rex Platt 10/21/2020-->
+        <form><!--//Rex Platt 10/21/2020-->
           <div class="field">
             <div class="control">
-              <button class="button is-info is-fullwidth">
-                <span>Return to home</span><!--//Rex Platt 10/21/2020-->
-                    <span class="icon">
-                      <i class="fas fa-home"></i><!--//Rex Platt 10/21/2020-->
-                    </span>
-                  </button>
+              <button class="button is-info is-fullwidth"><a href= <?php echo $Domain;?>><!--//Caleb 10/23/2020-->
+                <span><font color = "FFFFFF">Confrim Email</font></span><!--//Caleb 10/23/2020-->
+                    <span class="icon"><i class="fas fa-paper-plane has-text-white"></i><!--//Caleb 10/23/2020-->
+                </a>
+              </button>
             </div>
           </div>
 
