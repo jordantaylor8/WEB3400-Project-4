@@ -21,8 +21,18 @@
         echo "<p class='subtitle'>" . $_GET['email'] . "</p>";
 
         //Caleb Reese 10/23/2020 Registration Redirect
-        $exploded_Email = explode('@', $_GET['email']); //Parse email on @
-        $Domain = "https://www." . $exploded_Email[1]; //Domain is the second part of the exploded email
+          $exploded_Email = explode('@', $_GET['email']); //Parse email on @
+          
+          $exploded_Domain = explode('.', $exploded_Email[1]);//parse domain on period
+          
+          //if domain is something like mail.weber.edu it will just take the end of the domain
+          if(sizeof($exploded_Domain) > 2){
+            $Dcount = sizeof($exploded_Domain);
+            $Domain = "https://www.".$exploded_Domain[($Dcount - 2)].".".$exploded_Domain[$Dcount -1];
+          }
+          else{
+            $Domain = "https://www.".$exploded_Email[1];
+          }
       }
       ?>
       <div class="box">
